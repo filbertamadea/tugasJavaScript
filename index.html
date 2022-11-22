@@ -6,7 +6,7 @@
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 </head>
 <body>
-    <script src="nomor1.js"></script>
+    <!-- <script src="nomor1.js"></script>
     <br>
     <script src="nomor2.js"></script>
     <br>
@@ -128,7 +128,7 @@
             }
         }
     </script>
-    <br>
+    <br> -->
     <p>========================================================================================================</p> 
     <p>Nomor 9</p>
     <br>
@@ -139,29 +139,28 @@
     <script>
         function persegi(){
             var jmlBaris = document.getElementById("barisPersegi").value
-            document.write("Jumlah Baris Persegi = ", jmlBaris ,"<br>" )
-            if(jmlBaris>0){
-                let abc = ' '
-                for(var a=jmlBaris;a>=1;a--){
-                    for(var b=a;b>1;b--){
-                        if (a==jmlBaris||b==a){
-                            document.write("*")
-                        }
-                        else {
-                            document.write("b")
-                        }
+            document.write("Hasil Bisa dilihat di console= ", jmlBaris ,"<br><br>" )
+            let n = jmlBaris;
+            let string = "";
+            for(let i = 0; i < n; i++) { // external loop
+                for(let j = 0; j < n; j++) { // internal loop
+                    if(i === 0 || i === n - 1) {
+                        string += "*";
                     }
-                    for(var b=1;b<=jmlBaris-a+1;b++){
-                        if(a==1||b==jmlBaris-a+1){
-                            document.write("*")
-                        }
-                        else{
-                            document.write("b")
-                        }
+                    else {
+                    if(j === 0 || j === n - 1) {
+                        string += "*";
                     }
-            document.write("<br>")
-        }
-    }
+                    else {
+                        string += " ";
+                    }
+                }
+            }
+            // newline after each row
+            string += "\n";
+            }
+            // printing the string
+            console.log(string);
         }
     </script>
 </body> 
